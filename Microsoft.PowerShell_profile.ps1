@@ -1,3 +1,9 @@
+Set-Alias cl clear                                                                                                      
+function whoareyou() {Get-ComputerInfo | select CsName,CsManufacturer,CsModel,Osname,osbuildnumber}                     
+function battery() {(Get-CimInstance win32_battery).EstimatedChargeRemaining} 
+# Shell:                                                                                                                
+$wscript = New-Object -ComObject WScript.Shell
+
 Import-Module assert
 (Split-Path -Path (Get-Module assert).path ) + '\Format\src\Format.psm1' | Import-Module
 New-Alias nice Format-Collection
