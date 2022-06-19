@@ -22,10 +22,6 @@ function new-pw ($length) {
    -join ((1..$length) | % {Get-Random -Min 33 -Max 127 | %{[char]$_}}) | set-clipboard
 }
 
-function conda {
-    powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& 'C:\ProgramData\Anaconda3\shell\condabin\conda-hook.ps1' ; conda activate 'C:\ProgramData\Anaconda3' "    
-}
-
 function leelatraingpu {
    Start-Process powershell -ArgumentList nvidia-smi.exe,dmon ;
    cd C:\Users\Martin\lc0-v0.29.0-rc\;
